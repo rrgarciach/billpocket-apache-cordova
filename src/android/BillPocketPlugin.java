@@ -92,6 +92,7 @@ public class BillPocketPlugin extends CordovaPlugin {
         intent.putExtra("phone", args.getString(9));
 
         this.callbackContext = callbackContext;
+        cordova.setActivityResultCallback(this);
         cordova.getActivity().startActivityForResult(intent, BP_INTENT_CODE);
     }
 
@@ -104,12 +105,12 @@ public class BillPocketPlugin extends CordovaPlugin {
         }
         String response = extras.getString("result");
 
-        if(response.equals("aprobada")){
-            Toast.makeText(cordova.getActivity(),"Accion realizada con exito",Toast.LENGTH_SHORT).show();
-        } else if (response.equals("declinada")){
-            Toast.makeText(cordova.getActivity(),"transacion rechazada",Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(cordova.getActivity(),"ERROR DE BILLPOCKET",Toast.LENGTH_SHORT).show();
+        if(response.equals("Aprobada")){
+            Toast.makeText(cordova.getActivity(),"Transaccion " + response,Toast.LENGTH_SHORT).show();
+        } else if (response.equals("Rechazada")){
+            Toast.makeText(cordova.getActivity(),"Transaccion " + response,Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(cordova.getActivity(),"ERROR DE BILLPOCKET: " + response,Toast.LENGTH_SHORT).show();
         }
         this.callbackContext.success(response);
     }
