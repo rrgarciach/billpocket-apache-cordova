@@ -10,14 +10,14 @@
     <repo></repo>
     <issue></issue>
     <asset src="www/BillPocketPlugin.js" target="js/billpocketplugin.js" />
-    <js-module src="www/BillPocketPlugin.js" name="sendPayment">
-        <clobbers target="sendPayment" />
+    <js-module src="www/BillPocketPlugin.js" name="billPocket">
+        <clobbers target="billPocket" />
     </js-module>
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="BillPocketPlugin" >
-                <param name="android-package" value="com.billpocket.cordova.billpocketplugin"/>
+                <param name="android-package" value="com.billpocket.cordova.billpocketplugin.BillPocketPlugin"/>
             </feature>
         </config-file>
         <source-file src="src/android/BillPocketPlugin.java" target-dir="src/com/billpocket/cordova/billpocketplugin" />
