@@ -1,0 +1,19 @@
+{
+    "version": "0.1",
+    "name": "com.billpocket.cordova.billpocketplugin",
+    "cordova_name": "BillPocket Plugin",
+    "description": "BillPocket Plugin for Apache Cordova.",
+    "license": "Apache 2.0",
+    "repo": "",
+    "issue": "",
+    "keywords": [
+        "cordova",
+        "billpocket",
+        "payments"
+    ],
+    "platforms": [
+        "android",
+    ],
+    "engines": [],
+    "englishdoc": ""
+}
