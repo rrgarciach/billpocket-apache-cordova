@@ -79,6 +79,7 @@ public class BillPocketPlugin extends CordovaPlugin {
 
         if (urlScheme.length() > 0) {
             intent.putExtra("urlScheme", urlScheme);
+            startActivity(intent);
         }
 
         intent.putExtra("amount", args.getString(1));
