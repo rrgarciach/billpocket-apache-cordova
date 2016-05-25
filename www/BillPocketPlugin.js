@@ -1,9 +1,10 @@
 console.log("Setting BillPocketPlugin...");
+
 var exec = require('cordova/exec');
 
 module.exports = {
 	sendPayment: function(arrParams, callback) {
-        var urlScheme, amount, pin, transaction, transactionid, tip, identifier, reference, email, phone;
+        // check if URL schema was sent:
         if (arrParams.urlScheme.length > 0 && typeof arrParams.urlScheme != 'undefined') {
             app.arrData.push(arrParams.urlScheme);
         } else {
@@ -18,7 +19,9 @@ module.exports = {
             app.arrData.push(arrParams.email);
             app.arrData.push(arrParams.phone);
         }
+        
         console.log("BillPocketPlugin.js: added to scope.");
+
         exec(callback, callback, "BillPocketPlugin", "sendPayment", arrParams);
 	},
     callbacksuccess: function(message) {
